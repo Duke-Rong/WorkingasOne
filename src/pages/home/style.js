@@ -82,9 +82,15 @@ export const RecommendWrapper = styled.div`
 export const RecommendItem = styled.div`
     width: 280px;
     height: 50px;
-    background: url(${(props) => props.imgurl});
-    background-size: contain;
-    background-repeat: no-repeat;
+    margin-bottom: -10px;
+    border-radius: 20px;
+    background-color: ${(props) => props.backgroundColor};
+    line-height: 50px;
+    text-align: center;
+    p {
+        font-size:20px;
+        color: ${(props) => props.contentColor};
+    }
 `;
 
 export const WritterWrapper = styled.div`

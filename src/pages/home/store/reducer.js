@@ -1,9 +1,5 @@
 import { fromJS } from 'immutable';
 import * as actionTypes from './actionTypes';
-import recommend_list_1 from '../../../statics/recommend-list-1.png';
-import recommend_list_2 from '../../../statics/recommend-list-2.png';
-import recommend_list_3 from '../../../statics/recommend-list-3.png';
-import recommend_list_4 from '../../../statics/recommend-list-4.png';
 
 const defaultState = fromJS({
     pageNow: 1,
@@ -16,10 +12,6 @@ const defaultState = fromJS({
 const generate_initial_data = (state, action) => {
     var newArticleList = action.articleList;
     var newRecommendList = action.recommendList;
-    newRecommendList[0].pic = recommend_list_1;
-    newRecommendList[1].pic = recommend_list_2;
-    newRecommendList[2].pic = recommend_list_3;
-    newRecommendList[3].pic = recommend_list_4;
     return state.merge({
         articleList: fromJS(newArticleList),
         recommendList: fromJS(newRecommendList)

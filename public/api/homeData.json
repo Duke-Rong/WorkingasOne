@@ -27,19 +27,27 @@
             }],
         "recommendList": [{
             "id": 1,
-            "pic": "recommend_list_1"
+            "content": "Membership",
+            "content-color": "white",
+            "background-color": "orange"
         },
         {
             "id": 2,
-            "pic": "recommend_list_2"
+            "content": "About",
+            "content-color": "#8B4513",
+            "background-color": "#FFE4C4"
         },
         {
             "id": 3,
-            "pic": "recommend_list_3"
+            "content": "Partnership",
+            "content-color": "#2E8B57",
+            "background-color": "#AFEEEE"
         },
         {
             "id": 4,
-            "pic": "recommend_list_4"
+            "content": "Contact us",
+            "content-color": "#4169E1",
+            "background-color": "#87CEEB"
         }]
     }
 }
