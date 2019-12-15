@@ -42,6 +42,7 @@ export const ListItem = styled.div`
         border-radius: 10px;
         background: url(${(props) => props.imgurl});
         background-size: contain;
+        background-repeat: no-repeat;
     }
 `;
 
@@ -83,6 +84,7 @@ export const RecommendItem = styled.div`
     height: 50px;
     background: url(${(props) => props.imgurl});
     background-size: contain;
+    background-repeat: no-repeat;
 `;
 
 export const WritterWrapper = styled.div`

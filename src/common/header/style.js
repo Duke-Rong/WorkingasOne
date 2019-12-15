@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import logoPic from '../../statics/left-top-logo.png'
+import logoPic from '../../statics/logo.png'
 import diamondPic from '../../statics/nav-diamond.png'
 
 export const HeaderWrapper = styled.div`
@@ -18,6 +18,7 @@ export const Logo = styled.div`
     display: block;
     background: url(${logoPic});
     background-size: contain;
+    background-repeat: no-repeat;
 `
 
 export const Nav = styled.div`
@@ -52,6 +53,7 @@ export const NavItem = styled.div`
         margin-right:9px;
         background: url(${diamondPic});
         background-size: contain;
+        background-repeat: no-repeat;
     }
 `
 
