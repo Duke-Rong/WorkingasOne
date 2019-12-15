@@ -96,8 +96,11 @@ export const RecommendItem = styled.div`
 export const WritterWrapper = styled.div`
     width: 278px;
     height: 300px;
-    line-height: 300px;
-    text-align: center;
     border: 1px solid #dcdcdc;
     border-radius: 3px;
+    text-indent: 1em;
+`;
+
+export const ProjectItem = styled.p`
+    color: #006400;
 `;
