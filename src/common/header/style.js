@@ -1,6 +1,5 @@
 import styled from 'styled-components'
 import logoPic from '../../statics/logo.png'
-import diamondPic from '../../statics/nav-diamond.png'
 
 export const HeaderWrapper = styled.div`
     z-index: 1;
@@ -44,16 +43,6 @@ export const NavItem = styled.div`
     }
     &.backToMainPage{
         color: #ea6f5a
-    }
-    &.diamond{
-        width: 57px;
-        height: 40px;
-        margin-top:9px;
-        margin-left:9px;
-        margin-right:9px;
-        background: url(${diamondPic});
-        background-size: contain;
-        background-repeat: no-repeat;
     }
 `
 

@@ -14,11 +14,7 @@ class Header extends PureComponent {
                 <Link to='/'><Logo /></Link>
                 <Nav>
                 <Link to='/'><NavItem className="left backToMainPage">Main page</NavItem></Link>
-                    <NavItem className="right">Login</NavItem>
-                    <NavItem className="right diamond"></NavItem>
-                    <NavItem className="right">
-                        <span className="iconfont Aa">&#xe636;</span>
-                    </NavItem>
+                    <NavItem className="right">Theme</NavItem>
                     <SearchWrapper>
                         <CSSTransition in={focused} timeout={350} classNames="slide">
                             <NavSearch className={focused ? 'focused' : ''} onFocus={handleFocus} onBlur={handleUnFocus}></NavSearch>
@@ -27,7 +23,7 @@ class Header extends PureComponent {
                     </SearchWrapper>
                 </Nav>
                 <Addition>
-                    <Button className="reg">Login</Button>
+                    <Button className="reg">My account</Button>
                 </Addition>
             </HeaderWrapper>
         )
