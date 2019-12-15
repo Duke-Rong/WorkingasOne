@@ -1,16 +1,18 @@
 import styled from 'styled-components';
 
 export const HomeWrapper = styled.div`
-    width: 960px;
+    width: 1030px;
     margin: 0 auto;
     overflow: hidden;
 `;
 
 export const HomeLeft = styled.div`
-    margin-left: 15px;
-    padding-top: 30px;
-    width: 625px;
+    margin-top: 30px;
+    width: 700px;
     float: left;
+    background-color:#F5F5F5;
+    text-indent:1em;
+    border-radius: 15px;
 `;
 
 export const HomeRight = styled.div`
@@ -31,7 +33,7 @@ export const BackTop = styled.div`
 `;
 
 export const ListItem = styled.div`
-    padding: 20px 0;
+    padding: 15px 20px;
     border-bottom: 1px solid #dcdcdc;
     overflow: hidden;
     .list-pic {
@@ -47,7 +49,7 @@ export const ListItem = styled.div`
 `;
 
 export const ListInfo = styled.div`
-    width: 500px;
+    width: 400px;
     float: left;
     .title {
         line-height: 18px;
@@ -63,7 +65,7 @@ export const ListInfo = styled.div`
 `;
 
 export const LoadMore = styled.div`
-    width: 100%;
+    width: 60%;
     height: 40px;
     line-height: 40px;
     margin: 30px 0px;
@@ -99,6 +101,7 @@ export const WritterWrapper = styled.div`
     border: 1px solid #dcdcdc;
     border-radius: 3px;
     text-indent: 1em;
+    background-color: #F5F5F5;
 `;
 
 export const ProjectItem = styled.p`

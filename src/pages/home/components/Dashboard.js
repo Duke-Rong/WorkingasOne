@@ -3,7 +3,7 @@ import { WritterWrapper, ProjectItem } from '../style';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
-class Writer extends PureComponent {
+class Dashboard extends PureComponent {
 
     listItem(item, index) {
         return (
@@ -38,4 +38,4 @@ const mapDispatchToProps = (dispatch) => {
     }
 }
 
-export default connect(mapStateToProps,mapDispatchToProps)(Writer);
+export default connect(mapStateToProps,mapDispatchToProps)(Dashboard);

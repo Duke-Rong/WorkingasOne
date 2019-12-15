@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import List from './components/List';
 import Recommend from './components/Recommend';
-import Writer from './components/Writer';
+import Dashboard from './components/Dashboard';
 import { HomeWrapper, HomeLeft, HomeRight, BackTop } from './style';
 import { connect } from 'react-redux';
 import * as actionCreators from './store/actionCreators';
@@ -24,7 +24,7 @@ class Home extends PureComponent {
                 </HomeLeft>
                 <HomeRight>
                     <Recommend />
-                    <Writer />
+                    <Dashboard />
                 </HomeRight>
                 {this.state.backToTopShown ? <BackTop onClick={this.backToTop}>个</BackTop> : ''}
             </HomeWrapper>

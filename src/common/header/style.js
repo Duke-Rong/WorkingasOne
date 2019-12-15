@@ -6,6 +6,7 @@ export const HeaderWrapper = styled.div`
     position: relative;
     height: 56px;
     border-bottom: 1px solid #f0f0f0;
+    background: white;
 `
 
 export const Logo = styled.div`
@@ -13,7 +14,7 @@ export const Logo = styled.div`
     width: 80px;
     height: 56px;
     top: 0;
-    left: 0;
+    left: 10px;
     display: block;
     background: url(${logoPic});
     background-size: contain;

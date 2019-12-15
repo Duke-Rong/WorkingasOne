@@ -27,7 +27,9 @@ class List extends PureComponent {
                 {newArticleList.map((item, index) => {
                     return this.listItem(item, index);
                 })}
-                <LoadMore onClick={this.props.getMoreList}> {this.props.lastArticle ? 'Already the last page' : 'More Projects'}</LoadMore>
+                <div style={{  paddingLeft: "25%" }}>
+                    <LoadMore onClick={this.props.getMoreList}> {this.props.lastArticle ? 'Already the last page' : 'More Projects'}</LoadMore>
+                </div>
             </div>
         )
     }
