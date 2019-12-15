@@ -41,7 +41,7 @@ export const ListItem = styled.div`
         height: 100px;
         border-radius: 10px;
         background: url(${(props) => props.imgurl});
-        background-size: contain;
+        background-size: 100% 100%;
         background-repeat: no-repeat;
     }
 `;

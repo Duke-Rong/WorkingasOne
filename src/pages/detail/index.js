@@ -10,7 +10,6 @@ class Detail extends PureComponent {
         return ( 
             <DetailWrapper>
                 <Header>{newList.getIn([id-1,'title'])}</Header>
-                {/* <Content dangerouslySetInnerHTML={{__html: newList.getIn([id-1,'content'])}} /> */}
                 <Content>
                     <div class='pic-div'>
                         <img src={newList.getIn([id-1,'pic'])} alt=''/>

@@ -1,6 +1,5 @@
 import { fromJS } from 'immutable';
 import * as actionTypes from './actionTypes';
-import list_pic_1 from '../../../statics/list-pic-1.jpeg';
 import recommend_list_1 from '../../../statics/recommend-list-1.png';
 import recommend_list_2 from '../../../statics/recommend-list-2.png';
 import recommend_list_3 from '../../../statics/recommend-list-3.png';
@@ -16,10 +15,6 @@ const defaultState = fromJS({
 
 const generate_initial_data = (state, action) => {
     var newArticleList = action.articleList;
-    newArticleList.map((item)=>{
-        item.pic = list_pic_1;
-        return item;
-    })
     var newRecommendList = action.recommendList;
     newRecommendList[0].pic = recommend_list_1;
     newRecommendList[1].pic = recommend_list_2;

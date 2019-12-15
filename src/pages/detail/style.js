@@ -18,8 +18,13 @@ export const Header = styled.div`
 export const Content = styled.div`
     .pic-div {
         text-align: center;
+        img {
+            width: 550px;
+            height: 300px;
+        }
     }
     p { 
+        text-indent:2em;
         margin: 25px 0;
         font-size: 16px;
         line-height: 30px;

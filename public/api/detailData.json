@@ -3,9 +3,9 @@
     "data": {
         "List": [{
                 "id": 1,
-                "title": "Project 1",
-                "pic": "https://images.unsplash.com/photo-1489595812352-d3db436c102b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60",
-                "description": "project 1 description"
+                "title": "Task Publisher",
+                "pic": "http://m.qpic.cn/psb?/V12G8UAu3JY9Qx/79v3OILMKNI2sBn8toNwn*CHxh*9xvYNL5D*zReoXJE!/b/dLYAAAAAAAAA&bo=nwVAAgAAAAADB*o!&rf=viewer_4",
+                "description": "Task-Publisher is an in-class project, and a personal project based on my interest. It is a tool for working groups, help them divide the work more clearly and efficiently so every group member has a clear guideline about what exactly they need to do and what the other member’s job is. It had a three months development cycle, from design to deploy, a spiral model and MVC design pattern. The tool I use was vueJS as front-end, nodeJS as backend, and firebase as database. "
             },
             {
                 "id": 2,
