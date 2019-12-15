@@ -50,14 +50,14 @@ export const ListInfo = styled.div`
     width: 500px;
     float: left;
     .title {
-        line-height: 27px;
-        font-size: 18px;
+        line-height: 18px;
+        font-size: 24px;
         font-weight: bold;
         color: #333;
     }
     .desc {
-        line-height: 24px;
-        font-size: 13px;
+        line-height: 18px;
+        font-size: 18px;
         color: #999;
     }
 `;
