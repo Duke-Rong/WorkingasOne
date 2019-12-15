@@ -11,7 +11,7 @@ export const HeaderWrapper = styled.div`
 
 export const Logo = styled.div`
     position: absolute;
-    width: 100px;
+    width: 80px;
     height: 56px;
     top: 0;
     left: 0;
@@ -22,7 +22,7 @@ export const Logo = styled.div`
 `
 
 export const Nav = styled.div`
-    width: 960px;
+    width: 1060px;
     height: 100%;
     margin: 0 auto;
     padding-right: 70px; 
