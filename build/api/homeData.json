@@ -1,0 +1,45 @@
+{
+    "success": true,
+    "data": {
+        "articleList": [{
+            "id": 1,
+            "title": "Project 1",
+            "desc": "Project 1 brief description",
+            "pic": "list_pic_1"
+        },
+        {
+            "id": 2,
+            "title": "Project 2",
+            "desc": "Project 2 brief description",
+            "pic": "list_pic_1"
+        },
+        {
+            "id": 3,
+            "title": "Project 3",
+            "desc": "Project 3 brief description",
+            "pic": "list_pic_1"  
+        },
+        {
+            "id": 4,
+            "title": "Project 4",
+            "desc": "Project 4 brief description",
+            "pic": "list_pic_1"
+        }],
+        "recommendList": [{
+            "id": 1,
+            "pic": "recommend_list_1"
+        },
+        {
+            "id": 2,
+            "pic": "recommend_list_2"
+        },
+        {
+            "id": 3,
+            "pic": "recommend_list_3"
+        },
+        {
+            "id": 4,
+            "pic": "recommend_list_4"
+        }]
+    }
+}
