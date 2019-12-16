@@ -6,45 +6,42 @@ import { Card, Icon, List } from 'antd';
 class todoList extends PureComponent {
     
     render() {
-        const newUserList = this.props.userList.toJS();
-        const TodoList = newUserList['todoList'];
+        const todoList = this.props.todoList;
         return ( 
-            <Card title="Todo List" extra={<Icon type="plus" />} style={{ margin: '80px 0 0 10%', width: '80%' }}>
+            <Card title={this.props.message} extra={<Icon type="plus" />} style={{ margin: '80px 0 0 10%', width: '80%' }}>
             <List
             itemLayout="horizontal"
-            dataSource={newUserList}
+            dataSource={todoList}
             renderItem={item => (
-            <List.Item>
-                <List.Item.Meta
-                title={item}
-                description="Ant Design, a design language for background applications, is refined by Ant UED Team"
-                />
-            </List.Item>
+                <List.Item onClick={this.consoleLogID.bind(this,item)}>
+                    <List.Item.Meta
+                    title={item.toJS().briefDescription}
+                    description={item.toJS().duedate}
+                    />
+                </List.Item>
             )}
             />
             </Card>
         )
     }
 
-    componentDidMount() {
-        if (this.props.initial) {
-            this.props.getInitialTodoList();
-        }
+    consoleLogID(item){
+        console.log(JSON.parse(JSON.stringify(item)))
     }
 }
 
 const mapStateToProps = (state) => {
     return {
-        initial: state.get('detail').get('initial'),
-        userList: state.get('detail').get('userList')
+        // initial: state.get('detail').get('initial'),
+        // userList: state.get('detail').get('userList')
     }
 }
 
 const mapDispatchToProps = (dispatch) => {
     return {
-       getInitialTodoList() {
-           dispatch(actionCreators.getTodoList());
-       }
+    //    getInitialTodoList() {
+    //        dispatch(actionCreators.getTodoList());
+    //    }
     }
 }
 
