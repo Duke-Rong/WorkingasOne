@@ -37,6 +37,7 @@ export const NavItem = styled.div`
 
     &.left{
         float: left;
+        color: #DC143C;
     }
     &.right{
         float: right;

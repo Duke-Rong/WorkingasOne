@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import { ListItem, ListInfo, LoadMore } from '../style'
+import { ListItem, ListInfo, Button } from '../style'
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import * as actionCreators from '../store/actionCreators'
@@ -27,8 +27,9 @@ class List extends PureComponent {
                 {newArticleList.map((item, index) => {
                     return this.listItem(item, index);
                 })}
-                <div style={{  paddingLeft: "25%" }}>
-                    <LoadMore onClick={this.props.getMoreList}> {this.props.lastArticle ? 'Already the last page' : 'More Projects'}</LoadMore>
+                <div style={{  paddingLeft: "15%" }}>
+                    <Button onClick={this.props.getMoreList}> {this.props.lastArticle ? 'Already the last page' : 'More Projects'}</Button>
+                    <Button className="addProject">New project</Button>
                 </div>
             </div>
         )

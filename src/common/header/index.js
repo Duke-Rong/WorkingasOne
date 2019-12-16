@@ -38,7 +38,7 @@ class Header extends PureComponent {
             <HeaderWrapper>
                 <Link to='/'><Logo /></Link>
                 <Nav>
-                <Link to='/'><NavItem className="left backToMainPage">Main page</NavItem></Link>
+                <Link to='/'><NavItem className="left">Main page</NavItem></Link>
                 <ThemeWrapper className={this.state.themeFocused ? 'themeFocused' : 'themeUnfocused'} onMouseEnter={this.handleThemeFocus} onMouseLeave={this.handleThemeUnFocus}>
                     <ThemeSelector className={this.state.themeFocused ? 'themeFocused' : 'themeUnfocused'}>
                         <p className={this.state.themeFocused ? 'themeFocused' : 'themeUnfocused'}>Theme</p>

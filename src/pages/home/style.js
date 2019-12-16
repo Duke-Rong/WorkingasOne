@@ -64,16 +64,21 @@ export const ListInfo = styled.div`
     }
 `;
 
-export const LoadMore = styled.div`
-    width: 60%;
+export const Button = styled.div`
+    float: left;
+    width: 35%;
     height: 40px;
-    line-height: 40px;
     margin: 30px 0px;
+    line-height: 40px;
     background: #a5a5a5;
     text-align: center;
     border-radius: 20px;
     color: #fff;
     cursor: pointer;
+    &.addProject {
+        margin: 30px 30px;
+        background: #F08080;
+    }
 `;
 
 export const RecommendWrapper = styled.div`
