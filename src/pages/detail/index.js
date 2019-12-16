@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 import { DetailWrapper, Header, Content } from './style';
 import * as actionCreators from './store/actionCreators'
 import { connect } from 'react-redux';
-import { Card } from 'antd';
+import { Card, Icon } from 'antd';
 
 class Detail extends PureComponent {
     render() {
@@ -17,7 +17,7 @@ class Detail extends PureComponent {
                     </div>
                     <p>{newList.getIn([id-1,'description'])}</p>
                 </Content>
-                <Card title="Default size card" extra={<p>haha</p>} style={{ width: 300 }}>
+                <Card title="Default size card" extra={<Icon type="plus" />} style={{ marginLeft: '15%', width: '70%' }}>
                     <p>Card content</p>
                     <p>Card content</p>
                     <p>Card content</p>

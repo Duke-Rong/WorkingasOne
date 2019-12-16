@@ -4,6 +4,7 @@ import { CSSTransition } from 'react-transition-group';
 import { actionCreators } from './store';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
+import { Icon } from 'antd';
 
 class Header extends PureComponent {
 
@@ -49,7 +50,7 @@ class Header extends PureComponent {
                     <CSSTransition in={focused} timeout={350} classNames="slide">
                         <NavSearch className={focused ? 'focused' : ''} onFocus={handleFocus} onBlur={handleUnFocus}></NavSearch>
                     </CSSTransition>
-                        <span className={focused ? 'focused iconfont zoom' : 'iconfont zoom'}>&#xe62d;</span>
+                        <Icon type="search" className={focused ? 'focused iconfont zoom' : 'iconfont zoom'}/>
                 </SearchWrapper>
                 </Nav>
                 <Addition>
