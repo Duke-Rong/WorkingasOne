@@ -9,25 +9,20 @@ class Detail extends PureComponent {
         const newList = this.props.list;
         const id = this.props.match.params.id;
         return ( 
-            <div>
-                <DetailWrapper>
-                    <Header>{newList.getIn([id-1,'title'])}</Header>
-                    <Content>
-                        <div class='pic-div'>
-                            <img src={newList.getIn([id-1,'pic'])} alt=''/>
-                        </div>
-                        <p>{newList.getIn([id-1,'description'])}</p>
-                    </Content>
-                </DetailWrapper>
-                <div>
-                    <Card title="Default size card" extra={<p>haha</p>} style={{ width: 300 }}>
+            <DetailWrapper>
+                <Header>{newList.getIn([id-1,'title'])}</Header>
+                <Content>
+                    <div class='pic-div'>
+                        <img src={newList.getIn([id-1,'pic'])} alt=''/>
+                    </div>
+                    <p>{newList.getIn([id-1,'description'])}</p>
+                </Content>
+                <Card title="Default size card" extra={<p>haha</p>} style={{ width: 300 }}>
                     <p>Card content</p>
                     <p>Card content</p>
                     <p>Card content</p>
-                    </Card>
-                </div>
-            </div>
-
+                </Card>
+            </DetailWrapper>
         )
     }
 

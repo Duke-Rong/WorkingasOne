@@ -56,6 +56,7 @@ export const ListInfo = styled.div`
         font-size: 24px;
         font-weight: bold;
         color: #333;
+        padding: 5px 0;
     }
     .desc {
         line-height: 18px;
@@ -89,7 +90,7 @@ export const RecommendWrapper = styled.div`
 export const RecommendItem = styled.div`
     width: 280px;
     height: 50px;
-    margin-bottom: -10px;
+    margin-bottom: 5px;
     border-radius: 20px;
     background-color: ${(props) => props.backgroundColor};
     line-height: 50px;
@@ -107,6 +108,10 @@ export const WritterWrapper = styled.div`
     border-radius: 3px;
     text-indent: 1em;
     background-color: #F5F5F5;
+    font-size: 16px;
+    h3 {
+        font-size: 20px;
+    }
 `;
 
 export const ProjectItem = styled.p`

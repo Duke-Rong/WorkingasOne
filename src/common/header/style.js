@@ -93,13 +93,14 @@ export const ThemeSelector = styled.div`
     border-radius: 19px;
     background: #eee;
     p {
-        font-size: 18px;
+        font-size: 15px;
         color: #666;
         &.themeFocused{
             float: left;
             margin: 8px 0 0 10px;
         }
         &.themeUnfocused{
+            margin-top: 18px;
             padding-top: 8px;
             padding-left: 16px;
         }
