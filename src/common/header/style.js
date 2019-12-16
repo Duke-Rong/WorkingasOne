@@ -42,9 +42,6 @@ export const NavItem = styled.div`
         float: right;
         color: #969696;
     }
-    &.backToMainPage{
-        color: #ea6f5a
-    }
 `
 
 export const NavSearch = styled.input.attrs({
@@ -81,6 +78,52 @@ export const NavSearch = styled.input.attrs({
         width: 160px;
     }
 `
+export const ThemeWrapper = styled.div`
+    position: relative;
+    float: right;
+`
+
+export const ThemeSelector = styled.div`
+    width: 160px;
+    height: 38px;
+    border: none;
+    outline: none;
+    box-sizing: border-box;
+    border-radius: 19px;
+    background: #eee;
+    p {
+        font-size: 18px;
+        color: #666;
+        &.themeFocused{
+            float: left;
+            margin-top: 8px;
+            margin-left: 10px;
+            margin-bottom: 0px;
+        }
+        &.themeUnfocused{
+            padding-top: 8px;
+            padding-left: 16px;
+        }
+    }
+    &.themeFocused{
+        width: 300px;
+        margin-top: 10px;
+    }
+    &.themeUnfocused{
+        width: 91px;
+        margin-top: -8px;
+    }
+`
+export const ThemeChoice = styled.div`
+    float: left;
+    width: 25px;
+    height: 25px;
+    margin-left: 15px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    background: red;
+`
+
 export const SearchWrapper = styled.div`
     position: relative;
     float: left;

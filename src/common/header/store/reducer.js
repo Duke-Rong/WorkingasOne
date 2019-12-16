@@ -5,7 +5,8 @@ const defaultState = fromJS({
     focused: false,
     mouseIn: false,
     page: 1,
-    totalPage: -1
+    totalPage: -1,
+    themeList: []
 });
 
 export default (state = defaultState, action) => {
@@ -16,6 +17,8 @@ export default (state = defaultState, action) => {
             return state.set('focused',true);
         case (actionTypes.FOCUS_OFF): 
             return state.set('focused',false);
+        case (actionTypes.GENERATE_THEME):
+            return state.set('themeList',fromJS(action.themeList));
         default: return state;
     }
 }

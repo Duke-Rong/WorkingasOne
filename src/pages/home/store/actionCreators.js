@@ -26,13 +26,3 @@ export const generateList = () => {
 export const morePage = {
     type: actionTypes.MORE_PAGE
 }
-
-// export const scrollTopShow = {
-//     type: actionTypes.SCROLLTOPSHOWN,
-//     value: true
-// }
-
-// export const scrollTopUnshow = {
-//     type: actionTypes.SCROLLTOPSHOWN,
-//     value: false
-// }

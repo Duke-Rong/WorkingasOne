@@ -5,8 +5,7 @@ const defaultState = fromJS({
     pageNow: 1,
     lastArticle: false,
     articleList: [],
-    recommendList: [],
-    // backToTopShown: false
+    recommendList: []
 });
 
 const generate_initial_data = (state, action) => {
@@ -34,8 +33,6 @@ export default (state = defaultState, action) => {
             return generate_initial_data(state,action);
         case (actionTypes.MORE_PAGE):
             return more_page(state);
-        // case (actionTypes.SCROLLTOPSHOWN):
-        //     return state.set('backToTopShown',action.value);
         default: return state;
     }
 }

@@ -63,7 +63,7 @@ class Home extends PureComponent {
 
 const mapStateToProps = (state) => {
     return {
-        // backToTopShown: state.get('home').get('backToTopShown')
+
     }
 }
 
@@ -72,13 +72,6 @@ const mapDispatchToProps = (dispatch) => {
         generateList() {
             dispatch(actionCreators.generateList());
         }
-        // changeScrollShow() {
-        //     if(document.documentElement.scrollTop > 300) {
-        //         dispatch(actionCreators.scrollTopShow);
-        //     } else {
-        //         dispatch(actionCreators.scrollTopUnshow);
-        //     }
-        // }
     }
 }
 
