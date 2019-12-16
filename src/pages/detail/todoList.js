@@ -1,5 +1,4 @@
 import React, { PureComponent } from 'react';
-import * as actionCreators from './store/actionCreators'
 import { connect } from 'react-redux';
 import { Card, Icon, List } from 'antd';
 
@@ -18,7 +17,8 @@ class todoList extends PureComponent {
                     title={item.toJS().briefDescription}
                     description={item.toJS().duedate}
                     />
-                    <p onClick={this.consoleLogID.bind(this,item)}>haha</p>
+                    <Icon type={ this.props.message === "Todo List" ? "check" : "to-top"} onClick={this.handleMoveTask.bind(this,item)} style={{ marginRight: '20px' }}/>
+                    <Icon type="delete" style={{ marginRight: '20px' }} onClick={this.handleDelete.bind(this,item)}/>
                 </List.Item>
             )}
             />
@@ -26,8 +26,12 @@ class todoList extends PureComponent {
         )
     }
 
-    consoleLogID(item){
+    handleDelete(item){
         this.props.handleDeleteTask(this.props.message,this.props.todoList.toArray().indexOf(item))
+    }
+
+    handleMoveTask(item){
+        this.props.handleMoveTask(this.props.message,this.props.todoList.toArray().indexOf(item),item)
     }
 }
 

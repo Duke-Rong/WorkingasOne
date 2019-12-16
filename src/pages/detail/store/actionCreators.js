@@ -20,6 +20,14 @@ const deleteTaskAction = (whichUser, whichList, whichTask) => ({
     whichTask: whichTask
 })
 
+const moveTaskAction = (whichUser, whichList, whichTask, Task) => ({
+    type: actionTypes.MOVE_TASK,
+    whichUser: whichUser,
+    whichList: whichList,
+    whichTask: whichTask,
+    Task: Task
+})
+
 // ---------------------------- public ------------------------
 export const getDetail = () => {
     return (dispatch) => {
@@ -49,6 +57,17 @@ export const deleteTask = (whichUser, whichList, whichTask) => {
             whichList = 'doneList'
         }
         dispatch(deleteTaskAction(whichUser, whichList, whichTask))
+    }
+}
+
+export const moveTask = (whichUser, whichList, whichTask, Task) => {
+    return (dispatch) => {
+        if(whichList === 'Todo List') {
+            whichList = 'todoList'
+        } else {
+            whichList = 'doneList'
+        }
+        dispatch(moveTaskAction(whichUser, whichList, whichTask, Task))
     }
 }
 

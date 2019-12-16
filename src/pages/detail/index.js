@@ -20,8 +20,8 @@ class Detail extends PureComponent {
                     </div>
                     <p>{newList.getIn([id-1,'description'])}</p>
                 </Content>
-                <TodoList handleDeleteTask={this.handleDeleteTask.bind(this)} todoList={newTodoList} message="Todo List"/>
-                <TodoList handleDeleteTask={this.handleDeleteTask.bind(this)} todoList={newDoneList} message="Done List"/>
+                <TodoList handleDeleteTask={this.handleDeleteTask.bind(this)} handleMoveTask={this.handleMoveTask.bind(this)} todoList={newTodoList} message="Todo List"/>
+                <TodoList handleDeleteTask={this.handleDeleteTask.bind(this)} handleMoveTask={this.handleMoveTask.bind(this)} todoList={newDoneList} message="Done List"/>
             </DetailWrapper>
         )
     }
@@ -35,6 +35,10 @@ class Detail extends PureComponent {
 
     handleDeleteTask(whichList, whichTask){
         this.props.deleteTask(this.props.match.params.id, whichList, whichTask);
+    }
+
+    handleMoveTask(whichList, whichTask, Task){
+        this.props.moveTask(this.props.match.params.id, whichList, whichTask, Task);
     }
 }
 
@@ -56,6 +60,9 @@ const mapDispatchToProps = (dispatch) => {
        },
        deleteTask(whichUser, whichList, whichTask){
             dispatch(actionCreators.deleteTask(whichUser-1, whichList, whichTask));
+       },
+       moveTask(whichUser, whichList, whichTask, Task){
+            dispatch(actionCreators.moveTask(whichUser-1, whichList, whichTask, Task));
        }
     }
 }
