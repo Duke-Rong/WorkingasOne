@@ -10,9 +10,6 @@ class Detail extends PureComponent {
         const newList = this.props.list;
         const id = this.props.match.params.id;
         const newTodoList = this.props.userList.getIn([id-1,'todoList']);
-        // if(newTodoList!==undefined){
-        //     console.log(newTodoList.getIn([0]).toArray());
-        // }
         const newDoneList = this.props.userList.getIn([id-1,'doneList']);
         return ( 
             <DetailWrapper>
@@ -23,8 +20,8 @@ class Detail extends PureComponent {
                     </div>
                     <p>{newList.getIn([id-1,'description'])}</p>
                 </Content>
-                <TodoList id={id} todoList={newTodoList} message="Todo List"/>
-                <TodoList id={id} todoList={newDoneList} message="Done List"/>
+                <TodoList handleDeleteTask={this.handleDeleteTask.bind(this)} todoList={newTodoList} message="Todo List"/>
+                <TodoList handleDeleteTask={this.handleDeleteTask.bind(this)} todoList={newDoneList} message="Done List"/>
             </DetailWrapper>
         )
     }
@@ -34,6 +31,10 @@ class Detail extends PureComponent {
             this.props.getData();
             this.props.getInitialTodoList();
         }
+    }
+
+    handleDeleteTask(whichList, whichTask){
+        this.props.deleteTask(this.props.match.params.id, whichList, whichTask);
     }
 }
 
@@ -52,6 +53,9 @@ const mapDispatchToProps = (dispatch) => {
        },
        getInitialTodoList() {
            dispatch(actionCreators.getTodoList());
+       },
+       deleteTask(whichUser, whichList, whichTask){
+            dispatch(actionCreators.deleteTask(whichUser-1, whichList, whichTask));
        }
     }
 }

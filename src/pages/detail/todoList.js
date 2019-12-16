@@ -13,11 +13,12 @@ class todoList extends PureComponent {
             itemLayout="horizontal"
             dataSource={todoList}
             renderItem={item => (
-                <List.Item onClick={this.consoleLogID.bind(this,item)}>
+                <List.Item>
                     <List.Item.Meta
                     title={item.toJS().briefDescription}
                     description={item.toJS().duedate}
                     />
+                    <p onClick={this.consoleLogID.bind(this,item)}>haha</p>
                 </List.Item>
             )}
             />
@@ -26,7 +27,7 @@ class todoList extends PureComponent {
     }
 
     consoleLogID(item){
-        console.log(JSON.parse(JSON.stringify(item)))
+        this.props.handleDeleteTask(this.props.message,this.props.todoList.toArray().indexOf(item))
     }
 }
 

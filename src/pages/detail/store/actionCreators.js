@@ -13,6 +13,13 @@ const getInitialTodolist = (res) => ({
     userList: res.data.data.userList
 })
 
+const deleteTaskAction = (whichUser, whichList, whichTask) => ({
+    type: actionTypes.DELETE_TASK,
+    whichUser: whichUser,
+    whichList: whichList,
+    whichTask: whichTask
+})
+
 // ---------------------------- public ------------------------
 export const getDetail = () => {
     return (dispatch) => {
@@ -31,6 +38,17 @@ export const getTodoList = () => {
         }).catch(() => {
             console.log('error')
         })
+    }
+}
+
+export const deleteTask = (whichUser, whichList, whichTask) => {
+    return (dispatch) => {
+        if(whichList === 'Todo List') {
+            whichList = 'todoList'
+        } else {
+            whichList = 'doneList'
+        }
+        dispatch(deleteTaskAction(whichUser, whichList, whichTask))
     }
 }
 
