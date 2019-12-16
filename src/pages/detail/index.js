@@ -2,21 +2,32 @@ import React, { PureComponent } from 'react';
 import { DetailWrapper, Header, Content } from './style';
 import * as actionCreators from './store/actionCreators'
 import { connect } from 'react-redux';
+import { Card } from 'antd';
 
 class Detail extends PureComponent {
     render() {
         const newList = this.props.list;
         const id = this.props.match.params.id;
         return ( 
-            <DetailWrapper>
-                <Header>{newList.getIn([id-1,'title'])}</Header>
-                <Content>
-                    <div class='pic-div'>
-                        <img src={newList.getIn([id-1,'pic'])} alt=''/>
-                    </div>
-                    <p>{newList.getIn([id-1,'description'])}</p>
-                </Content>
-            </DetailWrapper>
+            <div>
+                <DetailWrapper>
+                    <Header>{newList.getIn([id-1,'title'])}</Header>
+                    <Content>
+                        <div class='pic-div'>
+                            <img src={newList.getIn([id-1,'pic'])} alt=''/>
+                        </div>
+                        <p>{newList.getIn([id-1,'description'])}</p>
+                    </Content>
+                </DetailWrapper>
+                <div>
+                    <Card title="Default size card" extra={<p>haha</p>} style={{ width: 300 }}>
+                    <p>Card content</p>
+                    <p>Card content</p>
+                    <p>Card content</p>
+                    </Card>
+                </div>
+            </div>
+
         )
     }
 
