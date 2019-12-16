@@ -96,9 +96,7 @@ export const ThemeSelector = styled.div`
         color: #666;
         &.themeFocused{
             float: left;
-            margin-top: 8px;
-            margin-left: 10px;
-            margin-bottom: 0px;
+            margin: 8px 0 0 10px;
         }
         &.themeUnfocused{
             padding-top: 8px;
