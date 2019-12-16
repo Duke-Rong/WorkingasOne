@@ -100,20 +100,3 @@ export const RecommendItem = styled.div`
         color: ${(props) => props.contentColor};
     }
 `;
-
-export const WritterWrapper = styled.div`
-    width: 278px;
-    height: 300px;
-    border: 1px solid #dcdcdc;
-    border-radius: 3px;
-    text-indent: 1em;
-    background-color: #F5F5F5;
-    font-size: 16px;
-    h3 {
-        font-size: 20px;
-    }
-`;
-
-export const ProjectItem = styled.p`
-    color: #006400;
-`;

@@ -1,28 +1,37 @@
 import React, { PureComponent } from 'react';
-import { WritterWrapper, ProjectItem } from '../style';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
+import { Collapse, Timeline } from 'antd';
 
 class Dashboard extends PureComponent {
+
+    // Collapse + TimeLine
 
     listItem(item, index) {
         return (
             <Link key={index} to={'/detail/' + item.get('id')} style={{ textDecoration: 'none' }}>
-                <ProjectItem>
+                <Timeline.Item>
                     - {item.get('title')}
-                </ProjectItem>
+                </Timeline.Item>
             </Link>
         )
     }
 
     render() {
-        return <WritterWrapper>
-            <h3>Welcome, Duke</h3>
-            <p>You have {this.props.articleList.size} projects</p>
-            {this.props.articleList.map((item, index) => {
-                    return this.listItem(item, index);
-                })}
-        </WritterWrapper>;
+        const { Panel } = Collapse;
+        return (
+            <Collapse defaultActiveKey={['1']}>
+                <Panel header="Welcome, Duke" key="1">
+                    <p>You have {this.props.articleList.size} projects</p>
+                    <br />
+                    <Timeline>
+                        {this.props.articleList.map((item, index) => {
+                            return this.listItem(item, index);
+                        })}
+                    </Timeline>
+                </Panel>
+            </Collapse>
+        );
     }
 }
 
