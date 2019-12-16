@@ -6,43 +6,45 @@ import { Card, Icon, List } from 'antd';
 class todoList extends PureComponent {
     
     render() {
-        const data = [
-            'Racing car sprays burning fuel into crowd.',
-            'Japanese princess to wed commoner.',
-            'Australian walks 100km after outback crash.',
-            'Man charged over missing wedding girl.',
-            'Los Angeles battles huge wildfires.',
-          ];
+        const newUserList = this.props.userList.toJS();
+        const TodoList = newUserList['todoList'];
         return ( 
             <Card title="Todo List" extra={<Icon type="plus" />} style={{ margin: '80px 0 0 10%', width: '80%' }}>
             <List
-                size="large"
-                header={<div>Header</div>}
-                footer={<div>Footer</div>}
-                bordered
-                dataSource={data}
-                renderItem={item => (
-                    <List.Item>
-                        {item}
-                    </List.Item>
-                )}
+            itemLayout="horizontal"
+            dataSource={newUserList}
+            renderItem={item => (
+            <List.Item>
+                <List.Item.Meta
+                title={item}
+                description="Ant Design, a design language for background applications, is refined by Ant UED Team"
                 />
+            </List.Item>
+            )}
+            />
             </Card>
         )
+    }
+
+    componentDidMount() {
+        if (this.props.initial) {
+            this.props.getInitialTodoList();
+        }
     }
 }
 
 const mapStateToProps = (state) => {
     return {
-        // list: state.get('detail').get('list')
+        initial: state.get('detail').get('initial'),
+        userList: state.get('detail').get('userList')
     }
 }
 
 const mapDispatchToProps = (dispatch) => {
     return {
-    //    getData(id) {
-    //        dispatch(actionCreators.getDetail(id));
-    //    }
+       getInitialTodoList() {
+           dispatch(actionCreators.getTodoList());
+       }
     }
 }
 

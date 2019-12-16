@@ -1,0 +1,110 @@
+{
+    "success": true,
+    "data": {
+        "userList": [{
+            "id": 1,
+            "todoList":[{
+                "briefDescription": "todo1",
+                "duedate": "2019-12-11"
+            },
+            {
+                "briefDescription": "todo2",
+                "duedate": "2019-12-12"
+            },
+            {
+                "briefDescription": "todo3",
+                "duedate": "2019-12-13"
+            }],
+            "doneList":[{
+                "briefDescription": "done1",
+                "duedate": "2019-12-11"
+            },
+            {
+                "briefDescription": "done2",
+                "duedate": "2019-12-12"
+            },
+            {
+                "briefDescription": "done3",
+                "duedate": "2019-12-13"
+            }]
+        },{
+            "id": 2,
+            "todoList":[{
+                "briefDescription": "todo1",
+                "duedate": "2019-12-11"
+            },
+            {
+                "briefDescription": "todo2",
+                "duedate": "2019-12-12"
+            },
+            {
+                "briefDescription": "todo3",
+                "duedate": "2019-12-13"
+            }],
+            "doneList":[{
+                "briefDescription": "done1",
+                "duedate": "2019-12-11"
+            },
+            {
+                "briefDescription": "done2",
+                "duedate": "2019-12-12"
+            },
+            {
+                "briefDescription": "done3",
+                "duedate": "2019-12-13"
+            }]
+        },{
+            "id": 3,
+            "todoList":[{
+                "briefDescription": "todo1",
+                "duedate": "2019-12-11"
+            },
+            {
+                "briefDescription": "todo2",
+                "duedate": "2019-12-12"
+            },
+            {
+                "briefDescription": "todo3",
+                "duedate": "2019-12-13"
+            }],
+            "doneList":[{
+                "briefDescription": "done1",
+                "duedate": "2019-12-11"
+            },
+            {
+                "briefDescription": "done2",
+                "duedate": "2019-12-12"
+            },
+            {
+                "briefDescription": "done3",
+                "duedate": "2019-12-13"
+            }]
+        },{
+            "id": 4,
+            "todoList":[{
+                "briefDescription": "todo1",
+                "duedate": "2019-12-11"
+            },
+            {
+                "briefDescription": "todo2",
+                "duedate": "2019-12-12"
+            },
+            {
+                "briefDescription": "todo3",
+                "duedate": "2019-12-13"
+            }],
+            "doneList":[{
+                "briefDescription": "done1",
+                "duedate": "2019-12-11"
+            },
+            {
+                "briefDescription": "done2",
+                "duedate": "2019-12-12"
+            },
+            {
+                "briefDescription": "done3",
+                "duedate": "2019-12-13"
+            }]
+        }]
+    }
+}
