@@ -121,7 +121,9 @@ export const ThemeChoice = styled.div`
     margin-left: 15px;
     margin-top: 5px;
     border: 1px solid #ddd;
-    background: red;
+    background: ${(props) => props.imgurl};
+    background-size: cover;
+    background-repeat: no-repeat;
 `
 
 export const SearchWrapper = styled.div`

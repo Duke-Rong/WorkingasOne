@@ -22,11 +22,11 @@ class Header extends PureComponent {
         if (this.state.themeFocused) {
             return (
                 <div>
-                    <ThemeChoice onClick={this.changeTheme.bind(this,themeList,0)}></ThemeChoice>
-                    <ThemeChoice onClick={this.changeTheme.bind(this,themeList,1)}></ThemeChoice>
-                    <ThemeChoice onClick={this.changeTheme.bind(this,themeList,2)}></ThemeChoice>
-                    <ThemeChoice onClick={this.changeTheme.bind(this,themeList,3)}></ThemeChoice>
-                    <ThemeChoice onClick={this.changeTheme.bind(this,themeList,4)}></ThemeChoice>
+                    <ThemeChoice onClick={this.changeTheme.bind(this,themeList,0)} imgurl={themeList.getIn([0,'pic'])}></ThemeChoice>
+                    <ThemeChoice onClick={this.changeTheme.bind(this,themeList,1)} imgurl={themeList.getIn([1,'pic'])}></ThemeChoice>
+                    <ThemeChoice onClick={this.changeTheme.bind(this,themeList,2)} imgurl={themeList.getIn([2,'pic'])}></ThemeChoice>
+                    <ThemeChoice onClick={this.changeTheme.bind(this,themeList,3)} imgurl={themeList.getIn([3,'pic'])}></ThemeChoice>
+                    <ThemeChoice onClick={this.changeTheme.bind(this,themeList,4)} imgurl="white"></ThemeChoice>
                 </div>
             )
         }
