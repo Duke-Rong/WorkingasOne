@@ -32,13 +32,6 @@ class Home extends PureComponent {
         );
     }
 
-    componentWillMount() {
-        // this.hahaRef = base.syncState('haha',{
-        //     context: this,
-        //     state: 'haha'
-        // })
-    }
-
     componentDidMount() {
         this.props.generateList();
         this.bindEvents();
@@ -46,7 +39,6 @@ class Home extends PureComponent {
 
     componentWillUnmount() {
         window.removeEventListener('scroll', this.changeScrollShow)
-        // base.removeBinding(this.hahaRef);
     }
 
     bindEvents(){

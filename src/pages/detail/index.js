@@ -1,16 +1,25 @@
-import React, { PureComponent } from 'react';
+import React, { Component } from 'react';
 import { DetailWrapper, Header, Content } from './style';
 import * as actionCreators from './store/actionCreators'
 import { connect } from 'react-redux';
 import TodoList from './todoList';
+import { base } from '../../service/firebase.conf'
 
-class Detail extends PureComponent {
+class Detail extends Component {
+
+    constructor(props){
+        super(props);
+        this.state = {
+            todoList: {}
+        }
+    }
     
     render() {
         const newList = this.props.list;
         const id = this.props.match.params.id;
         const newTodoList = this.props.userList.getIn([id-1,'todoList']);
         const newDoneList = this.props.userList.getIn([id-1,'doneList']);
+        console.log(this.state.todoList);
         return ( 
             <DetailWrapper>
                 <Header>{newList.getIn([id-1,'title'])}</Header>
@@ -26,11 +35,23 @@ class Detail extends PureComponent {
         )
     }
 
+    // Combine firebase with local state
+    componentWillMount() {
+        this.todoListRef = base.syncState('/haha/hoho',{
+            context: this,
+            state: 'todoList'
+        })
+    }
+
     componentDidMount() {
         if (this.props.initial) {
             this.props.getData();
             this.props.getInitialTodoList();
         }
+    }
+
+    componentWillUnmount() {
+        base.removeBinding(this.todoListRef);
     }
 
     handleDeleteTask(whichList, whichTask){
