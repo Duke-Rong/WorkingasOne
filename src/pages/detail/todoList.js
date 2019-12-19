@@ -27,6 +27,7 @@ class todoList extends Component {
                         title={item.toJS().briefDescription}
                         description={item.toJS().duedate}
                         />
+                        <Button shape="circle" icon="edit" style={{ marginRight: '20px' }}/>
                         <Button shape="circle" icon={ this.props.message === "Todo List" ? "check" : "redo"} onClick={this.showMoveModal.bind(this,item)} style={{ marginRight: '20px' }} />
                         <Button shape="circle" icon="delete" style={{ marginRight: '20px' }} onClick={this.showDeleteModal.bind(this,item)}/>
                     </List.Item>

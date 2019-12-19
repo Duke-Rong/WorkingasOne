@@ -22,6 +22,7 @@ class Home extends PureComponent {
                 <HomeLeft>
                     <List />
                 </HomeLeft>
+                <button onClick={console.log(this.props.haha)}>haha</button>
                 <HomeRight>
                     <Recommend />
                     <Dashboard />
@@ -31,6 +32,13 @@ class Home extends PureComponent {
         );
     }
 
+    componentWillMount() {
+        // this.hahaRef = base.syncState('haha',{
+        //     context: this,
+        //     state: 'haha'
+        // })
+    }
+
     componentDidMount() {
         this.props.generateList();
         this.bindEvents();
@@ -38,6 +46,7 @@ class Home extends PureComponent {
 
     componentWillUnmount() {
         window.removeEventListener('scroll', this.changeScrollShow)
+        // base.removeBinding(this.hahaRef);
     }
 
     bindEvents(){
@@ -63,7 +72,7 @@ class Home extends PureComponent {
 
 const mapStateToProps = (state) => {
     return {
-
+        
     }
 }
 

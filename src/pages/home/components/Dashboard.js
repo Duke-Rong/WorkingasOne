@@ -5,8 +5,6 @@ import { Collapse, Timeline } from 'antd';
 
 class Dashboard extends PureComponent {
 
-    // Collapse + TimeLine
-
     listItem(item, index) {
         return (
             <Link key={index} to={'/detail/' + item.get('id')} style={{ textDecoration: 'none' }}>

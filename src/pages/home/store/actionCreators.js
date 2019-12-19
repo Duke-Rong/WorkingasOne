@@ -11,6 +11,7 @@ const changeHomeData = (result) => ({
 })
 
 
+
 // ------------------------  public ------------------------
 
 export const generateList = () => {
