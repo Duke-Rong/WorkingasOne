@@ -76,10 +76,10 @@ class Detail extends Component {
         var updatedUserList = this.state.userList;
         if (whichList === "Todo List") {
             updatedUserList.todoList.splice(whichTask,1);
-            updatedUserList.doneList.push(Task)
+            updatedUserList.doneList.push(Task);
         } else {
             updatedUserList.doneList.splice(whichTask,1);
-            updatedUserList.todoList.push(Task)
+            updatedUserList.todoList.push(Task);
         }
         this.setState({
             userList: updatedUserList
@@ -88,10 +88,14 @@ class Detail extends Component {
 
     handleModifyTask(whichList, whichTask, Task){
         var updatedUserList = this.state.userList;
-        if (whichList === "Todo List") {
-            updatedUserList.todoList[whichTask] = Task
-        } else {
-            updatedUserList.doneList[whichTask] = Task
+        if (whichTask === -1) { // new task
+            updatedUserList.todoList.push(Task)
+        } else { // modify
+            if (whichList === "Todo List") {
+                updatedUserList.todoList[whichTask] = Task
+            } else {
+                updatedUserList.doneList[whichTask] = Task
+            }
         }
         this.setState({
             userList: updatedUserList

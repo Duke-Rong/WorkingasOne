@@ -12,24 +12,23 @@ class todoList extends Component {
             deleteConfirm: false,
             moveConfirm: false,
             detailConfirm: false,
-            item: undefined
+            item: undefined,
+            id: undefined,
+            newItem: {
+                duedate: 'Selete Date',
+                title: '',
+                briefDescription: ''
+            },
+            originalItem: {}
         };
     }
     
     render() {
         const todoList = this.props.todoList;
-        var item = {
-            duedate: '2019-01-01',
-            title: 'sample title',
-            briefDescription: 'sample description'
-        };
-        if (this.state.item) {
-            item = this.state.item
-        }
-
+        const item = this.state.item ? this.state.item : this.state.newItem
         return ( 
             <div>
-                <Card title={this.props.message} extra={<Icon type="plus"/>} style={{ margin: '80px 0 0 10%', width: '80%' }}>
+                <Card title={this.props.message} extra={<Icon type="plus" onClick={this.handleAddTask.bind(this)}/>} style={{ margin: '80px 0 0 10%', width: '80%' }}>
                 <List
                 itemLayout="horizontal"
                 dataSource={todoList}
@@ -81,7 +80,7 @@ class todoList extends Component {
                     cancelText="Discard"
                     >
                     <h3 style={{ float: 'left', marginRight: '5%'}}>Brief description: </h3>
-                    <TextArea value={item.briefDescription} style={{ width: '60%' }} onChange={this.briefDescriptionOnChange.bind(this)} autoSize />
+                    <TextArea value={item.briefDescription} style={{ width: '60%' }} onChange={this.briefDescriptionOnChange.bind(this)} autoSize={{ maxRows: 3 }} />
                     <div></div>
                     <br />
                     <h3 style={{ float: 'left', marginRight: '17%'}}>Due Date: </h3>
@@ -95,13 +94,14 @@ class todoList extends Component {
     // Delete Task
 
     handleDelete(){
-        this.props.handleDeleteTask(this.props.message,this.props.todoList.indexOf(this.state.item))
+        this.props.handleDeleteTask(this.props.message,this.state.id)
     }
 
     showDeleteModal(item) {
         this.setState({
             deleteConfirm: true,
-            item: item
+            item: item,
+            id: this.props.todoList.indexOf(item)
         });
     };
     
@@ -121,13 +121,14 @@ class todoList extends Component {
     // Move Task
 
     handleMoveTask(){
-        this.props.handleMoveTask(this.props.message,this.props.todoList.indexOf(this.state.item),this.state.item)
+        this.props.handleMoveTask(this.props.message,this.state.id,this.state.item)
     }
 
     showMoveModal(item) {
         this.setState({
             moveConfirm: true,
-            item: item
+            item: item,
+            id: this.props.todoList.indexOf(item)
         });
     };
     
@@ -147,7 +148,7 @@ class todoList extends Component {
     // Edit Task & New Task
 
     dueDateOnChange(date, dateString) {
-        var copyItem = this.state.item;
+        var copyItem = JSON.parse(JSON.stringify(this.state.item));
         copyItem.duedate = dateString;
         this.setState({
             item: copyItem
@@ -155,7 +156,7 @@ class todoList extends Component {
     }
 
     briefDescriptionOnChange({ target: { value } }){
-        var copyItem = this.state.item;
+        var copyItem = JSON.parse(JSON.stringify(this.state.item));
         copyItem.briefDescription = value;
         this.setState({
             item: copyItem
@@ -163,26 +164,40 @@ class todoList extends Component {
     }
 
     handleDetailTask(){
-        this.props.handleModifyTask(this.props.message,this.props.todoList.indexOf(this.state.item),this.state.item)
+        this.props.handleModifyTask(this.props.message,this.state.id,this.state.item)
+    }
+
+    handleAddTask(){
+        const newItem = JSON.parse(JSON.stringify(this.state.newItem));
+        this.setState({
+            detailConfirm: true,
+            item: newItem,
+            id: -1
+        })
     }
 
     showDetailModal(item) {
+        const originalItem = JSON.parse(JSON.stringify(item));
         this.setState({
             detailConfirm: true,
-            item: item
+            item: item,
+            originalItem: originalItem,
+            id: this.props.todoList.indexOf(item)
         });
     };
     
     handleDetailOk() {
         this.setState({
-            detailConfirm: false,
+            detailConfirm: false
         });
         this.handleDetailTask();
     };
 
     handleDetailCancel() {
+        const originalItem = JSON.parse(JSON.stringify(this.state.originalItem))
         this.setState({
             detailConfirm: false,
+            item: originalItem
         });
     };
 }
