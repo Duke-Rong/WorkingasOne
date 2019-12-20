@@ -30,8 +30,8 @@ class Detail extends Component {
                         </div>
                         <p>{newList.getIn([id-1,'description'])}</p>
                     </Content>
-                    <TodoList handleDeleteTask={this.handleDeleteTask.bind(this)} handleMoveTask={this.handleMoveTask.bind(this)} todoList={todoList} message="Todo List"/>
-                    <TodoList handleDeleteTask={this.handleDeleteTask.bind(this)} handleMoveTask={this.handleMoveTask.bind(this)} todoList={doneList} message="Done List"/>
+                    <TodoList handleDeleteTask={this.handleDeleteTask.bind(this)} handleMoveTask={this.handleMoveTask.bind(this)} handleModifyTask={this.handleModifyTask.bind(this)} todoList={todoList} message="Todo List"/>
+                    <TodoList handleDeleteTask={this.handleDeleteTask.bind(this)} handleMoveTask={this.handleMoveTask.bind(this)} handleModifyTask={this.handleModifyTask.bind(this)} todoList={doneList} message="Done List"/>
                 </DetailWrapper>
             )
         } else {
@@ -80,6 +80,18 @@ class Detail extends Component {
         } else {
             updatedUserList.doneList.splice(whichTask,1);
             updatedUserList.todoList.push(Task)
+        }
+        this.setState({
+            userList: updatedUserList
+        })
+    }
+
+    handleModifyTask(whichList, whichTask, Task){
+        var updatedUserList = this.state.userList;
+        if (whichList === "Todo List") {
+            updatedUserList.todoList[whichTask] = Task
+        } else {
+            updatedUserList.doneList[whichTask] = Task
         }
         this.setState({
             userList: updatedUserList
