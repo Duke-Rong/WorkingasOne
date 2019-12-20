@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Button, Card, Icon, List, Modal, DatePicker, Input } from 'antd';
+import { Button, Card, Icon, Modal, DatePicker, Input, Collapse } from 'antd';
 
 const { TextArea } = Input;
+const { Panel } = Collapse;
 
 class todoList extends Component {
 
@@ -24,26 +25,38 @@ class todoList extends Component {
     }
     
     render() {
-        const todoList = this.props.todoList;
-        const item = this.state.item ? this.state.item : this.state.newItem
+        const todoList = this.props.todoList ? this.props.todoList : [];
+        const item = this.state.item ? this.state.item : this.state.newItem;
+
+        const customPanelStyle = {
+            borderRadius: 4,
+            marginBottom: 10,
+            paddingBottom: 10,
+            overflow: 'hidden',
+        };
+
+        const genExtra = (item) => (
+            <div>
+            <Button shape="circle" icon="edit" style={{ marginRight: '20px' }} onClick={this.showDetailModal.bind(this,item)} />
+            <Button shape="circle" icon={ this.props.message === "Todo List" ? "check" : "redo"} onClick={this.showMoveModal.bind(this,item)} style={{ marginRight: '20px' }} />
+            <Button shape="circle" icon="delete" style={{ marginRight: '20px' }} onClick={this.showDeleteModal.bind(this,item)}/>
+            </div>
+        );
+
         return ( 
             <div>
                 <Card title={this.props.message} extra={<Icon type="plus" onClick={this.handleAddTask.bind(this)}/>} style={{ margin: '80px 0 0 10%', width: '80%' }}>
-                <List
-                itemLayout="horizontal"
-                dataSource={todoList}
-                renderItem={item => (
-                    <List.Item>
-                        <List.Item.Meta
-                        title={item.title}
-                        description={item.duedate}
-                        />
-                        <Button shape="circle" icon="edit" style={{ marginRight: '20px' }} onClick={this.showDetailModal.bind(this,item)} />
-                        <Button shape="circle" icon={ this.props.message === "Todo List" ? "check" : "redo"} onClick={this.showMoveModal.bind(this,item)} style={{ marginRight: '20px' }} />
-                        <Button shape="circle" icon="delete" style={{ marginRight: '20px' }} onClick={this.showDeleteModal.bind(this,item)}/>
-                    </List.Item>
-                )}
-                />
+                    <Collapse
+                        bordered={false}
+                        expandIcon={({ isActive }) => <Icon type="caret-right" rotate={isActive ? 90 : 0} />}
+                    >
+                    {todoList.map((item, index) => {
+                        return (<Panel header={item.title} key={index} style={customPanelStyle} extra={genExtra(item)}>
+                        <p>{item.briefDescription}</p>
+                        <p>Due Date: {item.duedate}</p>
+                        </Panel>)
+                    })}
+                    </Collapse>
                 </Card>
 
                 <Modal
@@ -110,7 +123,8 @@ class todoList extends Component {
         this.props.handleDeleteTask(this.props.message,this.state.id)
     }
 
-    showDeleteModal(item) {
+    showDeleteModal(item,e) {
+        e.stopPropagation();
         this.setState({
             deleteConfirm: true,
             item: item,
@@ -137,7 +151,8 @@ class todoList extends Component {
         this.props.handleMoveTask(this.props.message,this.state.id,this.state.item)
     }
 
-    showMoveModal(item) {
+    showMoveModal(item,e) {
+        e.stopPropagation();
         this.setState({
             moveConfirm: true,
             item: item,
@@ -209,7 +224,8 @@ class todoList extends Component {
     // so if the user click 'discard' the change could be discarded
     // simply by copy 'originalTask' to 'item'
     // Don't forget to use deep copy
-    showDetailModal(item) {
+    showDetailModal(item,e) {
+        e.stopPropagation();
         const originalTask = JSON.parse(JSON.stringify(item));
         this.setState({
             detailConfirm: true,
