@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Button, Card, Icon, List, Modal, DatePicker } from 'antd';
+import { Button, Card, Icon, List, Modal, DatePicker, Input } from 'antd';
+
+const { TextArea } = Input;
 
 class todoList extends Component {
 
@@ -16,7 +18,15 @@ class todoList extends Component {
     
     render() {
         const todoList = this.props.todoList;
-        const datePlaceHolder = this.state.item ? this.state.item.duedate : "2019-01-01";
+        var item = {
+            duedate: '2019-01-01',
+            title: 'sample title',
+            briefDescription: 'sample description'
+        };
+        if (this.state.item) {
+            item = this.state.item
+        }
+
         return ( 
             <div>
                 <Card title={this.props.message} extra={<Icon type="plus"/>} style={{ margin: '80px 0 0 10%', width: '80%' }}>
@@ -70,10 +80,12 @@ class todoList extends Component {
                     okText="Submit"
                     cancelText="Discard"
                     >
-                    <h3>Brief description: </h3>
+                    <h3 style={{ float: 'left', marginRight: '5%'}}>Brief description: </h3>
+                    <TextArea value={item.briefDescription} style={{ width: '60%' }} onChange={this.briefDescriptionOnChange.bind(this)} autoSize />
+                    <div></div>
                     <br />
-                    <h3 style={{ float: 'left', marginRight: '16%'}}>Due Date: </h3>
-                    <DatePicker onChange={this.dueDateOnChange.bind(this)} placeholder={datePlaceHolder}/>
+                    <h3 style={{ float: 'left', marginRight: '17%'}}>Due Date: </h3>
+                    <DatePicker onChange={this.dueDateOnChange.bind(this)} placeholder={item.duedate}/>
                 </Modal>
 
             </div>
@@ -137,6 +149,14 @@ class todoList extends Component {
     dueDateOnChange(date, dateString) {
         var copyItem = this.state.item;
         copyItem.duedate = dateString;
+        this.setState({
+            item: copyItem
+        });
+    }
+
+    briefDescriptionOnChange({ target: { value } }){
+        var copyItem = this.state.item;
+        copyItem.briefDescription = value;
         this.setState({
             item: copyItem
         });
