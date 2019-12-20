@@ -15,11 +15,11 @@ class todoList extends Component {
             item: undefined,
             id: undefined,
             newItem: {
-                duedate: 'Selete Date',
+                duedate: 'No Date Selected',
                 title: '',
                 briefDescription: ''
             },
-            originalItem: {}
+            originalTask: {}
         };
     }
     
@@ -35,7 +35,7 @@ class todoList extends Component {
                 renderItem={item => (
                     <List.Item>
                         <List.Item.Meta
-                        title={item.briefDescription}
+                        title={item.title}
                         description={item.duedate}
                         />
                         <Button shape="circle" icon="edit" style={{ marginRight: '20px' }} onClick={this.showDetailModal.bind(this,item)} />
@@ -79,12 +79,25 @@ class todoList extends Component {
                     okText="Submit"
                     cancelText="Discard"
                     >
-                    <h3 style={{ float: 'left', marginRight: '5%'}}>Brief description: </h3>
-                    <TextArea value={item.briefDescription} style={{ width: '60%' }} onChange={this.briefDescriptionOnChange.bind(this)} autoSize={{ maxRows: 3 }} />
-                    <div></div>
+                        
+                    <div>
+                    <h3 style={{ float: 'left', marginRight: '25%'}}>Title: </h3>
+                    <Input value={item.title} style={{ width: '40%' }} onChange={this.titleOnChange.bind(this)} />
+                    </div>
+                    
                     <br />
+
+                    <div>
+                    <h3 style={{ float: 'left', marginRight: '5%'}}>Brief Description: </h3>
+                    <TextArea value={item.briefDescription} style={{ width: '60%' }} onChange={this.briefDescriptionOnChange.bind(this)} autoSize={{ maxRows: 3 }} />
+                    </div>
+
+                    <br />
+
+                    <div>
                     <h3 style={{ float: 'left', marginRight: '17%'}}>Due Date: </h3>
                     <DatePicker onChange={this.dueDateOnChange.bind(this)} placeholder={item.duedate}/>
+                    </div>
                 </Modal>
 
             </div>
@@ -145,7 +158,7 @@ class todoList extends Component {
         });
     };
 
-    // Edit Task & New Task
+    // Edit Task
 
     dueDateOnChange(date, dateString) {
         var copyItem = JSON.parse(JSON.stringify(this.state.item));
@@ -163,10 +176,18 @@ class todoList extends Component {
         });
     }
 
-    handleDetailTask(){
-        this.props.handleModifyTask(this.props.message,this.state.id,this.state.item)
+    titleOnChange({ target: { value } }){
+        var copyItem = JSON.parse(JSON.stringify(this.state.item));
+        copyItem.title = value;
+        this.setState({
+            item: copyItem
+        });
     }
 
+    // New Task
+
+    // When user need to add a new task,
+    // Deep copy 'newItem' to current item 
     handleAddTask(){
         const newItem = JSON.parse(JSON.stringify(this.state.newItem));
         this.setState({
@@ -176,12 +197,24 @@ class todoList extends Component {
         })
     }
 
+
+    // Edit & show detail task
+
+    handleDetailTask(){
+        this.props.handleModifyTask(this.props.message,this.state.id,this.state.item)
+    }
+
+    // When the detail modal is shown, 
+    // copy the current item to 'originalTask' as well
+    // so if the user click 'discard' the change could be discarded
+    // simply by copy 'originalTask' to 'item'
+    // Don't forget to use deep copy
     showDetailModal(item) {
-        const originalItem = JSON.parse(JSON.stringify(item));
+        const originalTask = JSON.parse(JSON.stringify(item));
         this.setState({
             detailConfirm: true,
             item: item,
-            originalItem: originalItem,
+            originalTask: originalTask,
             id: this.props.todoList.indexOf(item)
         });
     };
@@ -193,11 +226,14 @@ class todoList extends Component {
         this.handleDetailTask();
     };
 
+    // When user clicks 'discard', 
+    // copy 'originalTask' to 'item' to discard the change
+    // Don't forget to use deep copy
     handleDetailCancel() {
-        const originalItem = JSON.parse(JSON.stringify(this.state.originalItem))
+        const originalTask = JSON.parse(JSON.stringify(this.state.originalTask))
         this.setState({
             detailConfirm: false,
-            item: originalItem
+            item: originalTask
         });
     };
 }
