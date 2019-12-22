@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { DetailWrapper, Header, Content } from './style';
 import * as actionCreators from './store/actionCreators'
 import { connect } from 'react-redux';
 import TodoList from './todoList';
 import { base } from '../../service/firebase.conf'
 
-class Detail extends Component {
+class Detail extends PureComponent {
 
     constructor(props){
         super(props);
@@ -86,10 +86,10 @@ class Detail extends Component {
         })
     }
 
-    handleModifyTask(whichList, whichTask, Task){
+    handleModifyTask(whichList, whichTask, Task, whichNewList){
         var updatedUserList = this.state.userList;
         if (whichTask === -1) { // new task
-            updatedUserList.todoList.push(Task)
+            whichNewList === "Done List" ? updatedUserList.doneList.push(Task) : updatedUserList.todoList.push(Task)
         } else { // modify
             if (whichList === "Todo List") {
                 updatedUserList.todoList[whichTask] = Task

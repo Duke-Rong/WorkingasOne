@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 import { Button, Card, Icon, Modal, DatePicker, Input, Collapse } from 'antd';
 
 const { TextArea } = Input;
 const { Panel } = Collapse;
 
-class todoList extends Component {
+class todoList extends PureComponent {
 
     constructor(props) {
         super(props);
@@ -15,6 +15,7 @@ class todoList extends Component {
             detailConfirm: false,
             item: undefined,
             id: undefined,
+            whichListToAddNewTask: undefined,
             newItem: {
                 duedate: 'No Date Selected',
                 title: '',
@@ -208,7 +209,8 @@ class todoList extends Component {
         this.setState({
             detailConfirm: true,
             item: newItem,
-            id: -1
+            id: -1,
+            whichListToAddNewTask: this.props.message
         })
     }
 
@@ -216,7 +218,7 @@ class todoList extends Component {
     // Edit & show detail task
 
     handleDetailTask(){
-        this.props.handleModifyTask(this.props.message,this.state.id,this.state.item)
+        this.props.handleModifyTask(this.props.message,this.state.id,this.state.item,this.state.whichListToAddNewTask)
     }
 
     // When the detail modal is shown, 
