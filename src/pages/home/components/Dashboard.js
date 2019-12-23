@@ -18,7 +18,7 @@ class Dashboard extends PureComponent {
     render() {
         const { Panel } = Collapse;
         return (
-            <Collapse defaultActiveKey={['1']}>
+            <Collapse defaultActiveKey={['1']} >
                 <Panel header="Welcome, Duke" key="1">
                     <p>You have {this.props.articleList.size} projects</p>
                     <br />

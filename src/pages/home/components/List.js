@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react';
 import { ListItem, ListInfo, Button } from '../style'
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { picList } from '../../../statics/export';
 import * as actionCreators from '../store/actionCreators'
 
 class List extends PureComponent {
@@ -9,7 +10,7 @@ class List extends PureComponent {
     listItem(item, index) {
         return (
             <Link key={index} to={'/detail/' + item.get('id')}>
-            <ListItem key={item.get('id')} imgurl={item.get('pic')}>
+            <ListItem key={item.get('id')} imgurl={picList[index]}>
                 <ListInfo>
                     <h3 className='title'>{item.get('title')}</h3>
                     <p className='desc'>{item.get('desc')}</p>

@@ -4,23 +4,19 @@
         "List": [{
                 "id": 1,
                 "title": "Task Publisher",
-                "pic": "http://m.qpic.cn/psb?/V12G8UAu3JY9Qx/79v3OILMKNI2sBn8toNwn*CHxh*9xvYNL5D*zReoXJE!/b/dLYAAAAAAAAA&bo=nwVAAgAAAAADB*o!&rf=viewer_4",
                 "description": "Task-Publisher is an in-class project, and a personal project based on my interest. It is a tool for working groups, help them divide the work more clearly and efficiently so every group member has a clear guideline about what exactly they need to do and what the other member’s job is. It had a three months development cycle, from design to deploy, a spiral model and MVC design pattern. The tool I use was vueJS as front-end, nodeJS as backend, and firebase as database. "
             },
             {
                 "id": 2,
-                "title": "Project 2",
-                "pic": "https://images.unsplash.com/photo-1489595812352-d3db436c102b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60",
-                "description": "project 2 description"            },
+                "title": "Sherbrooke Community TV Slides",
+                "description": "Sherbrooke Community is a community with around 260 residents. Sherbrooke Community have several TVs in their community, and each time they have information they want everyone in the community know about, they will post it on their TVs. They want a new TV display slide show that could keep everyone up to date on activities and opportunities. So what they wanted from us was a system that is easy to use, could make and post new slides that could represent all the information they want to post, like (menus, events, emergency bulletins, etc.), and the administration will have full control over the slides, including fonts, color, attached images, and so on."            },
             {
                 "id": 3,
                 "title": "Project 3",
-                "pic": "https://images.unsplash.com/photo-1489595812352-d3db436c102b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60",
                 "description": "project 3 description"            },
             {
                 "id": 4,
                 "title": "Project 4",
-                "pic": "https://images.unsplash.com/photo-1489595812352-d3db436c102b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60",
                 "description": "project 4 description"            }]
     }
 }

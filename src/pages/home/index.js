@@ -22,7 +22,6 @@ class Home extends PureComponent {
                 <HomeLeft>
                     <List />
                 </HomeLeft>
-                <button onClick={console.log(this.props.haha)}>haha</button>
                 <HomeRight>
                     <Recommend />
                     <Dashboard />

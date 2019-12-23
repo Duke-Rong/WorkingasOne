@@ -4,26 +4,22 @@
         "articleList": [{
             "id": 1,
             "title": "Task Publisher",
-            "desc": "Tool for working groups, help them divide the work more clearly and efficiently",
-            "pic": "http://m.qpic.cn/psb?/V12G8UAu3JY9Qx/79v3OILMKNI2sBn8toNwn*CHxh*9xvYNL5D*zReoXJE!/b/dLYAAAAAAAAA&bo=nwVAAgAAAAADB*o!&rf=viewer_4"
+            "desc": "Task management tool for working groups, help them divide the work more clearly and efficiently"
         },
         {
             "id": 2,
-            "title": "Project 2",
-            "desc": "Project 2 brief description",
-            "pic": "http://m.qpic.cn/psb?/V12G8UAu3JY9Qx/79v3OILMKNI2sBn8toNwn*CHxh*9xvYNL5D*zReoXJE!/b/dLYAAAAAAAAA&bo=nwVAAgAAAAADB*o!&rf=viewer_4"
+            "title": "Sherbrooke Community TV Slides",
+            "desc": "Web-based applications and display system using various programming languages and design tools."
         },
         {
             "id": 3,
             "title": "Project 3",
-            "desc": "Project 3 brief description",
-            "pic": "http://m.qpic.cn/psb?/V12G8UAu3JY9Qx/79v3OILMKNI2sBn8toNwn*CHxh*9xvYNL5D*zReoXJE!/b/dLYAAAAAAAAA&bo=nwVAAgAAAAADB*o!&rf=viewer_4"
+            "desc": "Project 3 brief description"
         },
         {
             "id": 4,
             "title": "Project 4",
-            "desc": "Project 4 brief description",
-            "pic": "http://m.qpic.cn/psb?/V12G8UAu3JY9Qx/79v3OILMKNI2sBn8toNwn*CHxh*9xvYNL5D*zReoXJE!/b/dLYAAAAAAAAA&bo=nwVAAgAAAAADB*o!&rf=viewer_4"
+            "desc": "Project 4 brief description"
         }],
         "recommendList": [{
             "id": 1,

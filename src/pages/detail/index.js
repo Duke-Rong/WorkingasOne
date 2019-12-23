@@ -4,6 +4,7 @@ import * as actionCreators from './store/actionCreators'
 import { connect } from 'react-redux';
 import TodoList from './todoList';
 import { base } from '../../service/firebase.conf'
+import { picList } from '../../statics/export'
 
 class Detail extends PureComponent {
 
@@ -26,7 +27,7 @@ class Detail extends PureComponent {
                     <Header>{newList.getIn([id-1,'title'])}</Header>
                     <Content>
                         <div className='pic-div'>
-                            <img src={newList.getIn([id-1,'pic'])} alt=''/>
+                            <img src={picList[id-1]} alt=''/>
                         </div>
                         <p>{newList.getIn([id-1,'description'])}</p>
                     </Content>

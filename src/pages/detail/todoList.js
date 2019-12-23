@@ -33,7 +33,7 @@ class todoList extends PureComponent {
             borderRadius: 4,
             marginBottom: 10,
             paddingBottom: 10,
-            overflow: 'hidden',
+            overflow: 'hidden'
         };
 
         const genExtra = (item) => (
@@ -53,12 +53,15 @@ class todoList extends PureComponent {
                     >
                     {todoList.map((item, index) => {
                         return (<Panel header={item.title} key={index} style={customPanelStyle} extra={genExtra(item)}>
-                        <p>{item.briefDescription}</p>
-                        <p>Due Date: {item.duedate}</p>
+                        <br />
+                        <p style ={{ textIndent: '2em' }}>{item.briefDescription}</p>
+                        <p style ={{ textIndent: '2em', color: 'OrangeRed' }}>Due Date: {item.duedate}</p>
                         </Panel>)
                     })}
                     </Collapse>
                 </Card>
+
+                {/* Delete Task Modal */}
 
                 <Modal
                     title="Warning!"
@@ -73,6 +76,8 @@ class todoList extends PureComponent {
                     Are you sure you want to delete this task?
                 </Modal>
 
+                {/* Move Task Modal */}
+
                 <Modal
                     title={this.props.message === "Todo List" ? "Finish The Task" : "Redo The Task"} 
                     visible={this.state.moveConfirm}
@@ -83,6 +88,8 @@ class todoList extends PureComponent {
                     >
                     Do you want to move this task to {this.props.message === "Todo List" ? "Done List?" : "Todo List?"}
                 </Modal>
+
+                {/* New Task Modal */}
 
                 <Modal
                     style={{ width: '100%' }}
