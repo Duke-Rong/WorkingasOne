@@ -13,13 +13,13 @@
         },
         {
             "id": 3,
-            "title": "Project 3",
-            "desc": "Project 3 brief description"
+            "title": "Food Ordering System",
+            "desc": "A java application that helps customers ordering food from restaurants online. "
         },
         {
             "id": 4,
-            "title": "Project 4",
-            "desc": "Project 4 brief description"
+            "title": "WorkingasOne",
+            "desc": "A web based tool sharing and clarifying tasks and improving the work efficiency for all kinds of working groups. "
         }],
         "recommendList": [{
             "id": 1,

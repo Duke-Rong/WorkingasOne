@@ -4,19 +4,18 @@
         "List": [{
                 "id": 1,
                 "title": "Task Publisher",
-                "description": "Task-Publisher is an in-class project, and a personal project based on my interest. It is a tool for working groups, help them divide the work more clearly and efficiently so every group member has a clear guideline about what exactly they need to do and what the other member’s job is. It had a three months development cycle, from design to deploy, a spiral model and MVC design pattern. The tool I use was vueJS as front-end, nodeJS as backend, and firebase as database. "
-            },
+                "description": "Task-Publisher is an in-class project, and a personal project based on my interest. It is a tool for working groups, help them divide the work more clearly and efficiently so every group member has a clear guideline about what exactly they need to do and what the other member’s job is. It had a three months development cycle, from design to deploy, a spiral model and MVC design pattern. The tool I use was vueJS as front-end, nodeJS as backend, and firebase as database. "     },
             {
                 "id": 2,
                 "title": "Sherbrooke Community TV Slides",
                 "description": "Sherbrooke Community is a community with around 260 residents. Sherbrooke Community have several TVs in their community, and each time they have information they want everyone in the community know about, they will post it on their TVs. They want a new TV display slide show that could keep everyone up to date on activities and opportunities. So what they wanted from us was a system that is easy to use, could make and post new slides that could represent all the information they want to post, like (menus, events, emergency bulletins, etc.), and the administration will have full control over the slides, including fonts, color, attached images, and so on."            },
             {
                 "id": 3,
-                "title": "Project 3",
-                "description": "project 3 description"            },
+                "title": "Food Ordering System",
+                "description": "Food Ordering System is a java application that helps customers ordering food from restaurants online. It is a Java application that supports multiple platform, designed and developed in a 3 months lifecycle. It provides several powerful features and is very easy to use. The application use JavaFX as its front-end, Java as its backend, and PostgreSQL database to store the information of restaurants and users. The system will demonstrate the restaurant information on its front-end, the user could click the restaurant to get its information or to order food from this restaurant, either pick-up or delivery. This application has rating system and sorting function. The rating function generate rates of restaurants directly from google, which helps customers understand the restaurant if he or she never tried this restaurant before. The sorting function that will rearrange the appearance order of the restaurants by its rate, the distance between the restaurant and the customer, Google Map was imported to calculate the distance, and the average price of the restaurant."            },
             {
                 "id": 4,
-                "title": "Project 4",
-                "description": "project 4 description"            }]
+                "title": "WorkingasOne",
+                "description": "Web-based tool sharing and clarifying works and improving the work efficiency for all kinds of working groups, help different sized companies tracking project processes and building customized growth plan depending on their need. The application focuses on work division and organization."            }]
     }
 }

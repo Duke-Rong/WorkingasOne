@@ -97,12 +97,12 @@ export const ThemeSelector = styled.div`
         color: #666;
         &.themeFocused{
             float: left;
-            margin: 8px 0 0 10px;
+            margin: 8px 0 0 15px;
         }
         &.themeUnfocused{
             margin-top: 18px;
             padding-top: 8px;
-            padding-left: 16px;
+            padding-left: 20px;
         }
     }
     &.themeFocused{
@@ -119,7 +119,7 @@ export const ThemeChoice = styled.div`
     width: 25px;
     height: 25px;
     margin-left: 15px;
-    margin-top: 5px;
+    margin-top: 7px;
     border: 1px solid #ddd;
     background: ${(props) => props.imgurl};
     background-size: cover;
