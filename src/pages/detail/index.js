@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 import { DetailWrapper, Header, Content } from './style';
 import * as actionCreators from './store/actionCreators'
 import { connect } from 'react-redux';
-import TodoList from './todoList';
+import TodoList from './components/todoList';
 import { base } from '../../service/firebase.conf'
 import { picList } from '../../statics/export'
 

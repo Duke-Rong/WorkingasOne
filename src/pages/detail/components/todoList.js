@@ -1,8 +1,9 @@
 import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
-import { Button, Card, Icon, Modal, DatePicker, Input, Collapse } from 'antd';
+import { Button, Card, Icon, Collapse } from 'antd';
+import { LocalModal } from './components/Modal'
+import { AddTaskPanel } from './components/AddTaskPanel'
 
-const { TextArea } = Input;
 const { Panel } = Collapse;
 
 class todoList extends PureComponent {
@@ -23,6 +24,9 @@ class todoList extends PureComponent {
             },
             originalTask: {}
         };
+        this.titleOnChange = this.titleOnChange.bind(this);
+        this.briefDescriptionOnChange = this.briefDescriptionOnChange.bind(this);
+        this.dueDateOnChange = this.dueDateOnChange.bind(this);
     }
     
     render() {
@@ -62,65 +66,13 @@ class todoList extends PureComponent {
                 </Card>
 
                 {/* Delete Task Modal */}
-
-                <Modal
-                    title="Warning!"
-                    visible={this.state.deleteConfirm}
-                    onOk={this.handleDeleteOk.bind(this)}
-                    onCancel={this.handleDeleteCancel.bind(this)}
-                    okText="Yes"
-                    cancelText="No"
-                    okButtonProps={{ type:"danger" }}
-                    cancelButtonProps={{ type:"primary" }}
-                    >
-                    Are you sure you want to delete this task?
-                </Modal>
+                {LocalModal({},"Warning!", this.state.deleteConfirm, this.handleDeleteOk.bind(this), this.handleDeleteCancel.bind(this), "Yes", "No", { type:"danger" }, { type:"primary" }, "Are you sure you want to delete this task?")}
 
                 {/* Move Task Modal */}
-
-                <Modal
-                    title={this.props.message === "Todo List" ? "Finish The Task" : "Redo The Task"} 
-                    visible={this.state.moveConfirm}
-                    onOk={this.handleMoveOk.bind(this)}
-                    onCancel={this.handleMoveCancel.bind(this)}
-                    okText="Yes"
-                    cancelText="No"
-                    >
-                    Do you want to move this task to {this.props.message === "Todo List" ? "Done List?" : "Todo List?"}
-                </Modal>
+                {LocalModal({},this.props.message === "Todo List" ? "Finish The Task" : "Redo The Task", this.state.moveConfirm, this.handleMoveOk.bind(this), this.handleMoveCancel.bind(this), "Yes", "No", {}, {}, "Do you want to move this task to ".concat(this.props.message === "Todo List" ? "Done List?" : "Todo List?"))}
 
                 {/* New Task Modal */}
-
-                <Modal
-                    style={{ width: '100%' }}
-                    title={'Description'} 
-                    visible={this.state.detailConfirm}
-                    onOk={this.handleDetailOk.bind(this)}
-                    onCancel={this.handleDetailCancel.bind(this)}
-                    okText="Submit"
-                    cancelText="Discard"
-                    >
-                        
-                    <div>
-                    <h3 style={{ float: 'left', marginRight: '25%'}}>Title: </h3>
-                    <Input value={item.title} style={{ width: '40%' }} onChange={this.titleOnChange.bind(this)} />
-                    </div>
-                    
-                    <br />
-
-                    <div>
-                    <h3 style={{ float: 'left', marginRight: '5%'}}>Brief Description: </h3>
-                    <TextArea value={item.briefDescription} style={{ width: '60%' }} onChange={this.briefDescriptionOnChange.bind(this)} autoSize={{ maxRows: 3 }} />
-                    </div>
-
-                    <br />
-
-                    <div>
-                    <h3 style={{ float: 'left', marginRight: '17%'}}>Due Date: </h3>
-                    <DatePicker onChange={this.dueDateOnChange.bind(this)} placeholder={item.duedate}/>
-                    </div>
-                </Modal>
-
+                {LocalModal({ width: '100%' }, 'Description', this.state.detailConfirm, this.handleDetailOk.bind(this), this.handleDetailCancel.bind(this), "Submit", "Discard", {}, {}, AddTaskPanel(item, this.titleOnChange, this.briefDescriptionOnChange, this.dueDateOnChange))}
             </div>
         )
     }
